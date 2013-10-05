@@ -27,7 +27,7 @@ console.log("***** connection *****");
     path: "/mail/feed/atom",
     port: 443,
     method: "GET",
-    auth: "vincent.fresnel@gmail.com:Pl@isir0E"
+    auth: ":"
 	};
 
 	https.get(options, function(res) {
