@@ -1,9 +1,10 @@
 {
   "modules" : { 
     "gmailnotifier":     {
-      "description": "Programme tv avec kazer.org",
+      "description": "Lecture des mails non lus",
       "version"    : "1.O",
-	  "Kazeruserkey"	   : "4cgh4dkv94d6w"
+	  "user"	   : "",
+	  "password"   : ""
     }
   }
 }

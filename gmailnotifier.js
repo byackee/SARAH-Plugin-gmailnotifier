@@ -8,8 +8,8 @@ var config = config.modules.gmailnotifier;
 	case 'compteunread':
 	get_mail(compte, data, callback, config );
 	break;
-	case 'litmail':
-	
+	case 'readmails':
+	get_mail(read, data, callback, config );
 	break;
 	default:
 	output(callback, "Une erreur s'est produite: ");
@@ -27,7 +27,7 @@ console.log("***** connection *****");
     path: "/mail/feed/atom",
     port: 443,
     method: "GET",
-    auth: ":"
+    auth: config.user + ":" + config.password
 	};
 
 	https.get(options, function(res) {
@@ -55,8 +55,21 @@ console.log("***** connection *****");
 }
 
 var compte = function (result, data, callback, config){
-output(callback, "vous avez: " + result.feed.entry.length + " emails non lus");
+output(callback, "vous avez " + result.feed.fullcount + " emails non lus");
 }
+
+var read = function (result, data, callback, config){
+var parle = "";
+	for ( var i = 0; i < result.feed.entry.length; i++ ) {
+					var mails = result.feed.entry[i];
+					console.log(mails);
+							parle += "mail numero " + (i + 1) + " titre " + mails.title;
+						}
+			
+					
+	output (callback, parle);	
+}
+
 
 
 var output = function ( callback, output ) {

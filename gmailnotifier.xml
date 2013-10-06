@@ -5,6 +5,7 @@
     <item weight="2">Sarah</item>
     <one-of>
       <item>verifie mes mails<tag>out.action.request="compteunread"</tag></item>
+	  <item>lecture de mes mails<tag>out.action.request="readmails"</tag></item>
     </one-of>
 
     <tag>out.action._attributes.uri="http://127.0.0.1:8080/sarah/gmailnotifier";</tag>
