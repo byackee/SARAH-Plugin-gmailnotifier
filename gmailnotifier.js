@@ -63,7 +63,7 @@ var parle = "";
 	for ( var i = 0; i < result.feed.entry.length; i++ ) {
 					var mails = result.feed.entry[i];
 					console.log(mails);
-							parle += "mail numero " + (i + 1) + " titre " + mails.title;
+							parle += " mail numero " + (i + 1) + " titre " + mails.title;
 						}
 			
 					
